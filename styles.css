@@ -5,14 +5,20 @@
     margin-top: 1px;
     margin-left: 1px;
 
-    flex-basis: 25px;
+    flex: 1 1 auto;
 }
 
 .container {
     display: flex;
     width: 480px;
     height: 480px;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex: 1 1 auto;
+
 }
 
 .hovering {

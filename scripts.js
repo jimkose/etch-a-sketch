@@ -7,21 +7,27 @@ function createGrid() {
     const container = document.createElement('div');
     container.classList.add('container');
 
-    for (let i = 0; i < gridSize ** 2; i++) {
-        const square = document.createElement('div');
-        square.classList.add('square');
-        // square.textContent = i + 1;
+    for (let i = 0; i < gridSize; i++) {
+        const row = document.createElement('div');
+        row.classList.add('row');
         
-        square.addEventListener('mouseover', event => {
-            event.target.classList.add('hovering');
-        })
-        square.addEventListener('mouseout', event => {
-            setTimeout(() => {
-                event.target.classList.remove('hovering');
-            }, '60');
-        })
+        for (let j = 0; j < gridSize; j++) {
+            const square = document.createElement('div');
+            square.classList.add('square');
 
-        container.appendChild(square);
+            square.addEventListener('mouseover', event => {
+                event.target.classList.add('hovering');
+            })
+            square.addEventListener('mouseout', event => {
+                setTimeout(() => {
+                    event.target.classList.remove('hovering');
+                }, '60');
+            })
+
+            row.appendChild(square);
+        }
+
+        container.appendChild(row);
     }
 
     body.appendChild(container);
